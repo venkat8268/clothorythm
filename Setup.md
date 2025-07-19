@@ -16,18 +16,18 @@ npm init -y
 npm install --save-dev parcel
 ```
 
-## React & ReactDOM
+## 🔰 React & ReactDOM
 
 ```bash
 npm install react react-dom
 ```
 
-## React Router DOM (stable version)
+## 🔰 React Router DOM (stable version)
 ```bash
 npm install react-router-dom@6.14.2
 ```
 
-## Tailwind 
+## 🔰 Tailwind 
 ```bash
 npm i -D tailwind
 ```
