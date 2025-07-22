@@ -32,4 +32,12 @@ npm install react-router-dom@6.14.2
 npm i -D tailwind
 ```
 
+## Fix for image importing issue
+
+```bash
+"*.{png,jpg,jpeg,gif,svg}": [
+      "@parcel/transformer-raw"
+    ]
+```
+
     

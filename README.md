@@ -11,3 +11,7 @@ Instead of relying on preconfigured boilerplates like `create-react-app`, this p
 - ⚡ Lightning-fast bundling and hot-reloading via Parcel
 - 🧱 Minimal dependencies and bloat for a cleaner setup
 - 🔧 Easier debugging and transparent build process
+
+# Todays Target 
+
+- Login/Signup and integration with firebase
