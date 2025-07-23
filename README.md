@@ -12,6 +12,6 @@ Instead of relying on preconfigured boilerplates like `create-react-app`, this p
 - 🧱 Minimal dependencies and bloat for a cleaner setup
 - 🔧 Easier debugging and transparent build process
 
-# Todays Target 
+# Features
 
 - Login/Signup and integration with firebase

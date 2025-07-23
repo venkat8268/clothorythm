@@ -1,5 +1,6 @@
 export const checkValidation = (name, email, password) => {
-    const nameRegex = /^[a-zA-Z\s]{2,50}$/.test(name);
+    const nameRegex = name == undefined ? true : /^[a-zA-Z\s]{2,50}$/.test(name);
+    
     const emailRegex = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/.test(email);
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password);
 
