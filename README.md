@@ -12,6 +12,14 @@ Instead of relying on preconfigured boilerplates like `create-react-app`, this p
 - 🧱 Minimal dependencies and bloat for a cleaner setup
 - 🔧 Easier debugging and transparent build process
 
-# Features
+# Built So Far
 
 - Login/Signup and integration with firebase
+- Deployed the project to firebase
+- Set up redux store
+- Added the authenticated user to Redux store
+
+# Todo
+
+- Add name to firebase
+- Navigate based on authentication 
