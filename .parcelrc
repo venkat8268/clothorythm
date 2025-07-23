@@ -5,7 +5,7 @@
       "@parcel/transformer-js",
       "@parcel/transformer-react-refresh-wrap"
     ],
-    "*.{png,jpg,jpeg,gif,svg}": [
+    "*.{png,jpg,jpeg,gif,svg,webp}": [
       "@parcel/transformer-raw"
     ]
   }

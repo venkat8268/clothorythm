@@ -1,4 +1,4 @@
-import backgroundImage from "../assets/images/login-bg.jpg";
+import backgroundImage from "../assets/images/login-bg.png";
 import { useRef, useState } from "react"
 import { checkValidation } from "../utils/validateAuthForm";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
