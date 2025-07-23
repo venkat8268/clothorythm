@@ -5,13 +5,17 @@ import Footer from "./components/Footer";
 import Error from "./components/Error";
 import Auth from "./components/Auth";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 const Root = () => {
     return (
         <>
-            <Header />
-            <Outlet />
-            {/* <Footer /> */}
+            <Provider store={appStore}>
+                <Header />
+                <Outlet />
+                {/* <Footer /> */}
+            </Provider>
         </>
     )
 }

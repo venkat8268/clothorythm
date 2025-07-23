@@ -71,7 +71,9 @@
     "weak-lru-cache": "^1.2.2"
   },
   "devDependencies": {
-    "parcel": "^2.15.4"
+    "@reduxjs/toolkit": "^2.8.2",
+    "parcel": "^2.15.4",
+    "react-redux": "^9.2.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
