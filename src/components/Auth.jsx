@@ -1,13 +1,18 @@
 import backgroundImage from "../assets/images/login-bg.png";
 import { useRef, useState } from "react"
 import { checkValidation } from "../utils/validateAuthForm";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase"
+import { useSelector } from "react-redux";
 
 // Use useRef for all inputs
 // Toggle form between Login and Register
 
 const Auth = () => {
+
+    const user = useSelector((store) => store.user)
+    console.log(user);
+    
 
     const [isLogin, setIsLogin] = useState(false);
     const [validationErrorMessage, setValidationErrorMessage] = useState(null);
@@ -18,7 +23,7 @@ const Auth = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+
         const validationError = checkValidation(name?.current?.value == undefined ? null : name.current.value, email.current.value, password.current.value)
         setValidationErrorMessage(validationError);
 
@@ -27,13 +32,12 @@ const Auth = () => {
         }
 
         // Handle Login and Register
-        
+
         if (isLogin) {
             signInWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
                     const user = userCredential.user;
-                    console.log(user);
-
+                    console.log("user logged in");
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -45,13 +49,19 @@ const Auth = () => {
             createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
                     const user = userCredential.user;
-                    console.log(user);
+                    updateProfile(user, {
+                        displayName: user.current.value
+                    }).then(() => {
+                        console.log('Profile updated');
+                    }).catch((error) => {
+                        setValidationErrorMessage(error.message);
+                    });
                 })
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
 
-                    setValidationErrorMessage(errorCode + " - "+ errorMessage)
+                    setValidationErrorMessage(errorCode + " - " + errorMessage)
                 });
         }
 
