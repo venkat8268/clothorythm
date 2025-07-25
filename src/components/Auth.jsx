@@ -1,18 +1,24 @@
 import backgroundImage from "../assets/images/login-bg.png";
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { checkValidation } from "../utils/validateAuthForm";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase"
-import { useSelector } from "react-redux";
-
-// Use useRef for all inputs
-// Toggle form between Login and Register
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { addUser } from "../utils/userSlice";
 
 const Auth = () => {
 
+    const navigate = useNavigate();
     const user = useSelector((store) => store.user)
-    console.log(user);
-    
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (user) {
+            navigate('/');
+            return;
+        }
+    }, [user]);
 
     const [isLogin, setIsLogin] = useState(false);
     const [validationErrorMessage, setValidationErrorMessage] = useState(null);
@@ -37,7 +43,6 @@ const Auth = () => {
             signInWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
                     const user = userCredential.user;
-                    console.log("user logged in");
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -48,11 +53,11 @@ const Auth = () => {
         } else {
             createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
-                    const user = userCredential.user;
-                    updateProfile(user, {
-                        displayName: user.current.value
+                    updateProfile(auth.currentUser, {
+                        displayName: name.current.value
                     }).then(() => {
-                        console.log('Profile updated');
+                        const { uid, email, displayName } = auth.currentUser;
+                        dispatch(addUser({ uid: uid, email: email, displayName: displayName }))
                     }).catch((error) => {
                         setValidationErrorMessage(error.message);
                     });
