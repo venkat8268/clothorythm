@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
 
@@ -42,6 +42,9 @@ const Header = () => {
             }
             {
                 user && <div className="cursor-pointer ms-4" onClick={handleSignOut}>Sign Out</div>
+            }
+            {
+                !user && <Link to={'/login'} className="me-4">Login</Link>
             }
             </div>
         </div>
