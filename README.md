@@ -41,3 +41,10 @@ Instead of relying on preconfigured boilerplates like `create-react-app`, this p
 - Used useSelector to access user data across components.
 - Based on Redux user state, handled conditional redirects and UI behavior.
 - Using onAuthStateChanged to restrict users to access panel if not logged in
+
+
+Todo 
+
+- Create a hook for fetching videos from youtube api (done)
+- Save it to local storage and then to react redux
+- Fetch from redux store and render the video as background in the hero section 
