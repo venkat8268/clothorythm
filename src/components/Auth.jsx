@@ -4,21 +4,10 @@ import { checkValidation } from "../utils/validateAuthForm";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase"
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { addUser } from "../utils/userSlice";
 
 const Auth = () => {
-
-    const navigate = useNavigate();
-    const user = useSelector((store) => store.user)
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        if (user) {
-            navigate('/');
-            return;
-        }
-    }, [user]);
 
     const [isLogin, setIsLogin] = useState(false);
     const [validationErrorMessage, setValidationErrorMessage] = useState(null);

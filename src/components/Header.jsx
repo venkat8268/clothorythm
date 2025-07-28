@@ -11,21 +11,24 @@ const Header = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 const { uid, email, displayName } = user;
                 dispatch(addUser({ uid: uid, email: email, displayName: displayName }))
+                navigate('/')
             } else {
                 dispatch(removeUser())
+                navigate('/login')
             }
         });
+
+        return () => unsubscribe()
     }, [])
 
     
     function handleSignOut() {
         signOut(auth).then(() => {            
             dispatch(removeUser());
-            navigate('/login');
         }).catch((error) => {
             alert(error.message);
         });

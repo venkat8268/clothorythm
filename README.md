@@ -40,4 +40,4 @@ Instead of relying on preconfigured boilerplates like `create-react-app`, this p
 - Listened for Firebase auth state changes and updated Redux store accordingly.
 - Used useSelector to access user data across components.
 - Based on Redux user state, handled conditional redirects and UI behavior.
-
+- Using onAuthStateChanged to restrict users to access panel if not logged in
