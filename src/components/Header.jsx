@@ -11,6 +11,8 @@ const Header = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    useYoutubeApiVideos();
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -22,9 +24,7 @@ const Header = () => {
                 navigate('/login')
             }
         });
-
-        // useYoutubeApiVideos();
-
+        
         return () => unsubscribe()
     }, [])
 

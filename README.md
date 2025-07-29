@@ -46,5 +46,5 @@ Instead of relying on preconfigured boilerplates like `create-react-app`, this p
 Todo 
 
 - Create a hook for fetching videos from youtube api (done)
-- Save it to local storage and then to react redux
+- Save it to local storage and then to react redux (done)
 - Fetch from redux store and render the video as background in the hero section 
