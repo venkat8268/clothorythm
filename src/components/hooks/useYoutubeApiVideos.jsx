@@ -42,7 +42,6 @@ const useYoutubeApiVideos = () => {
             }
 
             dispatch(addVideos(youtubeVideosArray));
-            console.log(youtubeVideosArray);
         }
 
         fetchVideos();

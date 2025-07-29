@@ -42,9 +42,13 @@ Instead of relying on preconfigured boilerplates like `create-react-app`, this p
 - Based on Redux user state, handled conditional redirects and UI behavior.
 - Using onAuthStateChanged to restrict users to access panel if not logged in
 
+**▶️ Added Youtube video as hero section background** 
 
-Todo 
+- Create a hook for fetching videos from youtube api
+- Save it to local storage and then to react redux
+- Fetch from redux store and render the video as background in the hero section
 
-- Create a hook for fetching videos from youtube api (done)
-- Save it to local storage and then to react redux (done)
-- Fetch from redux store and render the video as background in the hero section 
+Todo
+
+-- Design the hero section frontend
+-- Add env to firebase and deploy
