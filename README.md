@@ -47,8 +47,9 @@ Instead of relying on preconfigured boilerplates like `create-react-app`, this p
 - Create a hook for fetching videos from youtube api
 - Save it to local storage and then to react redux
 - Fetch from redux store and render the video as background in the hero section
+- Design the hero section frontend
 
 Todo
 
--- Design the hero section frontend
--- Add env to firebase and deploy
+-- Add env to firebase and deploy   
+-- Add gsap animation
