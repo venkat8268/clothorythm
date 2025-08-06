@@ -43,9 +43,9 @@ const Header = () => {
     const user = useSelector((store) => store.user)
 
     return (
-        <div className="absolute bg-gradient-to-b from-black/25 to-transparent w-full flex justify-between items-center px-4 z-100">
-            <div className=" text-3xl px-4 py-6 font-bold text-orange-50 ">Clothorythm</div>
-            <div className="flex text-orange-50">
+        <div className="absolute w-full flex justify-between items-center px-4 z-100">
+            <div className=" text-3xl px-4 py-6 font-bold text-orange-950 ">Clothorythm</div>
+            <div className="flex text-orange-950">
                 {
                     user && <div className="font-extrabold">
                         {/* {user.displayName} */}
