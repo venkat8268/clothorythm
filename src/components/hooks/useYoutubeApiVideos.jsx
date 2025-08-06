@@ -20,7 +20,7 @@ const useYoutubeApiVideos = () => {
                     maxResults: "20",
                     videoDuration: "medium",
                     order: "viewCount",
-                    q: "street wear men",
+                    q: "Street Wear Outfits",
                     key: process.env.REACT_APP_YOUTUBE_API_KEY
                 });
 

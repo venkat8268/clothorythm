@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux"
 import HeroBackground from "./HeroBackground"
 import { useEffect, useState } from "react"
+import Hero from "./Hero"
 
 const Home = () => {
 
@@ -16,9 +17,12 @@ const Home = () => {
 
     return (
         <>
-            {
+            {/* {
                 backgroundVideo &&
                 <HeroBackground {...backgroundVideo} />
+            } */}
+            {
+                <Hero />
             }
             {/* And Overlay Text */}
         </>

@@ -13,6 +13,7 @@
   },
   "homepage": "https://github.com/venkat8268/clothorythm#readme",
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@tailwindcss/postcss": "^4.1.11",
     "ansi-styles": "^4.3.0",
     "base-x": "^3.0.11",
@@ -34,6 +35,7 @@
     "firebase": "^12.0.0",
     "get-port": "^4.2.0",
     "globals": "^13.24.0",
+    "gsap": "^3.13.0",
     "has-flag": "^4.0.0",
     "is-extglob": "^2.1.1",
     "is-glob": "^4.0.3",
